@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>salsa de tomate</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(270deg, #800080, #4b0082, #9932cc);
+            background-size: 600% 600%;
+            animation: moverFondo 10s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        @keyframes moverFondo {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        /* Estilo y animación para el título y subtítulo */
+        .texto-neon {
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #ff00ff,
+                0 0 30px #ff00ff,
+                0 0 40px #ff00ff,
+                0 0 55px #ff00ff,
+                0 0 75px #ff00ff;
+            animation: parpadeo 2s infinite;
+            text-align: center;
+        }
+
+        h1.texto-neon {
+            font-size: 3em;
+        }
+
+        h2.texto-neon {
+            font-size: 1.5em;
+            margin-top: -10px;
+        }
+
+        @keyframes parpadeo {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        img {
+            margin-top: 20px;
+        }
+
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="texto-neon">MUCHO ÁNIMO, EL CALOR ES MENTAL</h1>
+    <h2 class="texto-neon">tkm salsa de tomate</h2>
+
+    <img src="https://i.pinimg.com/564x/97/58/fa/9758faa45f63bcab81065d6f2ab0e9df.jpg" alt="Imagen motivadora" width="300">
+
+    <audio id="musica" autoplay loop muted>
+    <source src="xd.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    window.addEventListener("load", () => {
+        const audio = document.getElementById("musica");
+        // Intentar quitar mute después de 1 segundo
+        setTimeout(() => {
+            audio.muted = false;
+            audio.play().catch(() => {
+                console.log("Autoplay bloqueado, requiere interacción");
+            });
+        }, 1000);
+    });
+</script>
+
+
+    <!-- Librería de confeti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+        // Confeti infinito en intervalos
+        setInterval(() => {
+            confetti({
+                particleCount: 50,
+                spread: 60,
+                origin: { y: 0 }
+            });
+        }, 1500);
+    </script>
+</body>
+</html>
