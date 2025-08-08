@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>salsa de tomate</title>
     <style>
         body {
@@ -13,7 +15,9 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
         }
 
         @keyframes moverFondo {
@@ -21,8 +25,10 @@
             50% {background-position: 100% 50%;}
             100% {background-position: 0% 50%;}
         }
-        .texto-neon {
+
+        h1 {
             font-family: Arial, sans-serif;
+            font-size: clamp(2em, 5vw, 3em);
             color: white;
             text-shadow: 
                 0 0 5px #fff,
@@ -33,16 +39,22 @@
                 0 0 55px #ff00ff,
                 0 0 75px #ff00ff;
             animation: parpadeo 2s infinite;
-            text-align: center;
+            margin-bottom: 10px;
         }
 
-        h1.texto-neon {
-            font-size: 3em;
-        }
-
-        h2.texto-neon {
-            font-size: 1.5em;
-            margin-top: -10px;
+        .subtexto {
+            font-size: clamp(1em, 3vw, 1.5em);
+            color: white;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #ff00ff,
+                0 0 30px #ff00ff,
+                0 0 40px #ff00ff,
+                0 0 55px #ff00ff,
+                0 0 75px #ff00ff;
+            animation: parpadeo 2s infinite;
+            margin-bottom: 20px;
         }
 
         @keyframes parpadeo {
@@ -51,45 +63,28 @@
         }
 
         img {
-            margin-top: 20px;
+            width: 80%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         audio {
-            margin-top: 20px;
+            width: 90%;
+            max-width: 300px;
         }
     </style>
 </head>
 <body>
-    <h1 class="texto-neon">MUCHO ÁNIMO, EL CALOR ES MENTAL</h1>
-    <h2 class="texto-neon">tkm salsa de tomate</h2>
+    <h1>MUCHO ÁNIMO, EL CALOR ES MENTAL</h1>
+    <div class="subtexto">tkm salsa de tomate</div>
 
-    <img src="https://i.pinimg.com/564x/97/58/fa/9758faa45f63bcab81065d6f2ab0e9df.jpg" alt="Imagen motivadora" width="300">
+    <img src="https://i.pinimg.com/564x/97/58/fa/9758faa45f63bcab81065d6f2ab0e9df.jpg" alt="Imagen motivadora">
 
-    <audio id="musica" autoplay loop muted>
-    <source src="xd.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-    window.addEventListener("load", () => {
-        const audio = document.getElementById("musica");
-        setTimeout(() => {
-            audio.muted = false;
-            audio.play().catch(() => {
-                console.log("Autoplay bloqueado, requiere interacción");
-            });
-        }, 1000);
-    });
-</script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-    <script>
-        setInterval(() => {
-            confetti({
-                particleCount: 50,
-                spread: 60,
-                origin: { y: 0 }
-            });
-        }, 1500);
-    </script>
+    <audio controls>
+        <source src="xd.mp3" type="audio/mpeg">
+    </audio>
 </body>
 </html>
+
 
