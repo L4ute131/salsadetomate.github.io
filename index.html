@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -22,8 +21,6 @@
             50% {background-position: 100% 50%;}
             100% {background-position: 0% 50%;}
         }
-
-        /* Estilo y animación para el título y subtítulo */
         .texto-neon {
             font-family: Arial, sans-serif;
             color: white;
@@ -75,7 +72,6 @@
 <script>
     window.addEventListener("load", () => {
         const audio = document.getElementById("musica");
-        // Intentar quitar mute después de 1 segundo
         setTimeout(() => {
             audio.muted = false;
             audio.play().catch(() => {
@@ -84,12 +80,8 @@
         }, 1000);
     });
 </script>
-
-
-    <!-- Librería de confeti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script>
-        // Confeti infinito en intervalos
         setInterval(() => {
             confetti({
                 particleCount: 50,
@@ -100,3 +92,4 @@
     </script>
 </body>
 </html>
+
